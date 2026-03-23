@@ -47,7 +47,7 @@ function findProjects(sourceDirs: string[], maxDepth: number): Project[] {
     try {
       const result = execSync(
         `find "${resolved}" -maxdepth ${maxDepth} -name .git -type d 2>/dev/null`,
-        { encoding: "utf-8", timeout: 10000 }
+        { encoding: "utf-8", timeout: 10000 },
       );
       const repos = result
         .trim()
@@ -140,12 +140,20 @@ export default function Command() {
         <List.Item
           key={project.fullPath}
           title={project.name}
-          subtitle={project.relativePath !== project.name ? project.relativePath : undefined}
+          subtitle={
+            project.relativePath !== project.name
+              ? project.relativePath
+              : undefined
+          }
           accessories={[{ text: project.sourceDir }]}
           icon={Icon.Folder}
           actions={
             <ActionPanel>
-              <Action title="Open in cmux" icon={Icon.Terminal} onAction={() => openProject(project)} />
+              <Action
+                title="Open in Cmux"
+                icon={Icon.Terminal}
+                onAction={() => openProject(project)}
+              />
             </ActionPanel>
           }
         />

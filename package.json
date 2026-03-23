@@ -1,13 +1,13 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "cmux-sessionizer",
-  "title": "cmux Sessionizer",
+  "title": "Cmux Sessionizer",
   "description": "Fuzzy-find git projects and open them as cmux workspaces",
   "icon": "command-icon.png",
   "author": "kyle_kincer",
   "license": "MIT",
   "categories": ["Developer Tools", "Productivity"],
-  "platforms": ["mac"],
+  "platforms": ["macOS"],
   "preferences": [
     {
       "name": "sourceDirectories",
